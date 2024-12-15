@@ -1,16 +1,15 @@
 import express from "express";
 const router = express.Router();
-import * as FeaturesController from "../app/controllers/FeaturesController.js";
+import * as Usercontroller from "../app/controllers/Usercontroller.js";
 import authMiddleware from "../app/middlewares/authMiddleware.js";
-import { FileUpload } from "../app/controllers/FeaturesController.js";
 
-router.get("/feature1/TokenEncode", FeaturesController.TokenEncode);
-router.get("/feature2/TokenDecode", FeaturesController.TokenDecode);
-router.get("/feature3/Email", FeaturesController.Email);
-router.get("/feature4/Profile", authMiddleware, FeaturesController.Profile);
-router.get("/feature5/CreateCookies", FeaturesController.CreateCookies);
-router.get("/feature6/RemoveCookies", FeaturesController.RemoveCookies);
+/* user */
 
-router.post("/feature7/FileUpload", FeaturesController.FileUpload);
+router.post("/Registration", Usercontroller.Registration); //done 1
+router.post("/Login", Usercontroller.Login); //done 2 +3
+router.get("/Profiledetails", authMiddleware, Usercontroller.Profiledetails); //done 4
+router.post("/alluserProfile", authMiddleware, Usercontroller.allProfile); //done 5
+router.post("/Profileupdate", authMiddleware, Usercontroller.Profileupdate); //done 6
+router.post("/Profiledelete", authMiddleware, Usercontroller.Profiledelete); // done 7
 
 export default router;

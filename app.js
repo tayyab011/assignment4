@@ -47,7 +47,7 @@ app.set("etag", WEB_CACHE);
 mongoose
   .connect(MONGODB_CONNECTION, { autoIndex: true })
   .then(() => {
-    console.log("Connected to MongoDB s");
+    console.log("Connected to MongoDB");
   })
   .catch((err) => {
     console.log("Error connecting to MongoDB");
